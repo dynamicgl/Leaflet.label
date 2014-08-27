@@ -140,6 +140,7 @@ L.Label = L.Class.extend({
 			this._prevContent = this._content;
 
 			this._labelWidth = this._container.offsetWidth;
+			this._labelHeight = this._container.offsetHeight;
 		}
 	},
 
@@ -156,6 +157,7 @@ L.Label = L.Class.extend({
 			labelPoint = map.layerPointToContainerPoint(pos),
 			direction = this.options.direction,
 			labelWidth = this._labelWidth,
+                        labelHeight = this._labelHeight,
 			offset = L.point(this.options.offset);
 
 		// position to the right (right or auto & needs to)
@@ -164,7 +166,14 @@ L.Label = L.Class.extend({
 			L.DomUtil.removeClass(container, 'leaflet-label-left');
 
 			pos = pos.add(offset);
-		} else { // position to the left
+		}
+		else if(direction === 'bottom') {
+			pos = pos.add(L.point(offset.x - labelWidth/2, offset.y));
+		} 
+		else if(direction === 'top') {
+			pos = pos.add(L.point(offset.x - labelWidth/2, -offset.y-labelHeight));
+		}
+		else { // position to the left
 			L.DomUtil.addClass(container, 'leaflet-label-left');
 			L.DomUtil.removeClass(container, 'leaflet-label-right');
 

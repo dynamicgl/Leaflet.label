@@ -92,6 +92,12 @@ L.BaseMarkerMethods = {
 			this.label.setContent(content);
 		}
 	},
+	
+	updateLabelOffset: function(offset) {
+		if(this.label) {
+			this.label.options.offset = offset;
+		}
+	},
 
 	getLabel: function () {
 		return this.label;
