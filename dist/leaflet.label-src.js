@@ -183,10 +183,10 @@ L.Label = L.Class.extend({
 			pos = pos.add(offset);
 		}
 		else if(direction === 'bottom') {
-			pos = pos.add(L.point(offset.x - labelWidth/2, offset.y));
+			pos = pos.add(L.point(offset.x, offset.y));
 		} 
 		else if(direction === 'top') {
-			pos = pos.add(L.point(offset.x - labelWidth/2, -offset.y-labelHeight));
+			pos = pos.add(L.point(offset.x, -offset.y-labelHeight));
 		}
 		else { // position to the left
 			L.DomUtil.addClass(container, 'leaflet-label-left');
@@ -462,10 +462,10 @@ L.Marker.include({
 		if (this.label && !this._labelNoHide) {
 			this.hideLabel();
 		}
-
 		return this._originalSetLatLng(latlng);
 	}
 });
+
 
 // Add in an option to icon that is used to set where the label anchor is
 L.CircleMarker.mergeOptions({

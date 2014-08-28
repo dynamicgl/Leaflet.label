@@ -49,7 +49,6 @@ L.Marker.include({
 		if (this.label && !this._labelNoHide) {
 			this.hideLabel();
 		}
-
 		return this._originalSetLatLng(latlng);
 	}
 });
