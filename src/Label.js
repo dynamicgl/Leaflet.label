@@ -168,7 +168,7 @@ L.Label = L.Class.extend({
 			pos = pos.add(offset);
 		}
 		else if(direction === 'bottom') {
-			pos = pos.add(L.point(offset.x, offset.y));
+			pos = pos.add(offset);
 		} 
 		else if(direction === 'top') {
 			pos = pos.add(L.point(offset.x, -offset.y-labelHeight));
