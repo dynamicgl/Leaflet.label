@@ -255,5 +255,9 @@ L.Label = L.Class.extend({
 		} else {
 			L.DomEvent.preventDefault(e);
 		}
-	}
+	},
+        
+    getContainer: function() {
+        return this._container;
+    }
 });
