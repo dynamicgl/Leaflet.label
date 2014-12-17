@@ -272,9 +272,9 @@ L.Label = (L.Layer ? L.Layer : L.Class).extend({
 		}
 	},
         
-        getContainer: function() {
-                return this._container;
-        }
+    getContainer: function() {
+        return this._container;
+    }
 });
 
 
